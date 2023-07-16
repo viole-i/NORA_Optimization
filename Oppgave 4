@@ -18,7 +18,7 @@ output layer is based on which output neuron has the highest probability.
 
 c (vekt 5%)
 How many layers does the DNN have? What are these layers?
-The DNN has
+The DNN has three layers:
 1. The input layer. This layer represents the input data, consisting of 28x28pixel input images.
 2.  Hidden layer, consisting of 5 neurons.
 3. The output layer, made up of 10 neurons. Each of these neurons corresponds to one of the possible classes,
@@ -26,11 +26,24 @@ which are the digits 0 to 9.
 
 d (vekt 5%)
 Which are the functions connecting two layers? What is the loss function?
-These layers are connected by weights and biases associated with the neurons. 
+In a DNN, the layers are connected by weights and biases associated with each neuron.
+In our specific MNIST DNN, the 784 values values of the input layer are connected
+into 5 neurons with the sigmoid activation function. The output layer, consisting of
+10 neurons, is connected using the softmax activation function, which is an extension of the
+sigmoid activation function.
+For training the DNN, the chosen loss function is the categorical cross entropy.
+It measures the difference between the predicted probability distribution (output layer) and
+the true labels of the input images. The goal of the DNN during training is to minimize this
+loss function.
 
 e (vekt 5%)
 How many parameters does the DNN have?
-To calculate the number of parameters of this DNN, we consider the weights and biases of all layers. In the given
-example, the input layer has 784 neurons, connected with the hidden layer of 128 neurons, and 128 biases, one for
-each neuron. Additionally, the output layer has 10 neurons, one per digit.
-The total number of parameters is:
+The number of parameters of a DNN depends on the weights and biases of its layers. In the given
+example, the input layer has 784 neurons, connected with the hidden layer of 5 neurons.
+Additionally, the output layer has 10 neurons, one per digit.
+We find the number of weights by summing over the products of neurons of adjacent layers:
+784 x 5 (input and hidden layer) + 5 x 10 (hidden and output layer) 
+and then add the total number of biases, which is equal to the number of hidden neurons plus
+the number of output neurons:
+784 x 5 + 5 x 10 + 5 + 10 = 3985
+--> The DNN has 3985 parameters.
