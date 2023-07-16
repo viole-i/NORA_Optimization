@@ -1,0 +1,36 @@
+We analyse the deep neural netwrok (DNN): https://becominghuman.ai/simple-neural-network-on-mnist-handwritten-digit-dataset-61e47702ed25,
+which is a simple DNN to classify the MNIST dataset: https://www.tensorflow.org/datasets/catalog/mnist
+
+a (vekt 5%)
+What is the size of input image?
+The MNIST datasets consists of input images of 28 by 28 pixels, which show grayscale images of handwritten digits.
+The size of the input image of 28x28pixels results in 784 (28x28) input neurons in the DNN input layer.
+
+b (vekt 5%)
+What does the output layer represent?
+The output layer of the DNN represents the predicted class or label for the input image.
+As we have ten different digits included in the MNIST dataset, ranging from 0 to 9, the output layer consists of
+10 neurons, where each neuron represents one of the possible classes or labels.
+
+A DNN consists of the input layer, hidden layer(s) and the output layer. The DNN assigns probability values to
+different neurons in its hidden layers, and the final prediction of which digit the input image represented in the 
+output layer is based on which output neuron has the highest probability.
+
+c (vekt 5%)
+How many layers does the DNN have? What are these layers?
+The DNN has
+1. The input layer. This layer represents the input data, consisting of 28x28pixel input images.
+2.  Hidden layer, consisting of 5 neurons.
+3. The output layer, made up of 10 neurons. Each of these neurons corresponds to one of the possible classes,
+which are the digits 0 to 9.
+
+d (vekt 5%)
+Which are the functions connecting two layers? What is the loss function?
+These layers are connected by weights and biases associated with the neurons. 
+
+e (vekt 5%)
+How many parameters does the DNN have?
+To calculate the number of parameters of this DNN, we consider the weights and biases of all layers. In the given
+example, the input layer has 784 neurons, connected with the hidden layer of 128 neurons, and 128 biases, one for
+each neuron. Additionally, the output layer has 10 neurons, one per digit.
+The total number of parameters is:
